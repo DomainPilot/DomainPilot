@@ -22,7 +22,7 @@ class events():
 			changes=True
 
 command  = "uwsgi --plugins python3,http --master-fifo /tmp/uwsgi_fifo "
-command += "--http :9090 -H .venv --wsgi-file domain_pilot"
+command += "--http :9090 -H .venv --wsgi-file domain_pilot --logto2 server.log"
 server = subprocess.Popen(command.split(' '), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 print(f'Server is running with pid {server.pid}...')
